@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casos reales de ciberseguridad 2024–2026</title>
+<meta name="description" content="Diez ciberataques reales analizados: qué pasó, cómo ocurrió, qué impacto tuvo y qué fuentes lo respaldan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="bar">
+      <span class="brand">Observatorio de ciberincidentes</span>
+      <button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">Tema</button>
+    </div>
+    <h1>Diez ataques reales que muestran cómo se rompe la seguridad</h1>
+    <p class="lede">Casos de 2024 a 2026 en bancos, hospitales, gobiernos y la red global. Filtre, busque y abra cada caso para ver qué pasó, cómo ocurrió y qué fuentes lo respaldan.</p>
+    <dl class="stats" id="stats"></dl>
+    <div class="dist">
+      <p class="dist-t" id="dist-t">Casos por tipo de ataque. Toque un tramo para filtrar.</p>
+      <div class="dist-bar" id="dist" role="group" aria-labelledby="dist-t"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="tools">
+      <label class="search"><span class="sr">Buscar</span><input type="search" id="q" placeholder="Buscar por víctima, país o palabra clave" autocomplete="off"></label>
+      <label class="sort"><span>Ordenar</span>
+        <select id="sort">
+          <option value="recent">Más recientes</option>
+          <option value="old">Más antiguos</option>
+          <option value="az">Por nombre</option>
+        </select>
+      </label>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por tipo de ataque"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <p>Ningún caso coincide con esa búsqueda.</p>
+      <button type="button" class="btn" id="reset">Borrar filtros</button>
+    </div>
+  </main>
+
+  <footer>Casos de 2024 a 2026 con fuentes verificables. Trabajo con fines académicos.</footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="d-title">
+  <article class="detail" id="detail"></article>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
